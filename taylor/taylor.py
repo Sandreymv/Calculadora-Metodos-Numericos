@@ -19,6 +19,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 from math import factorial
 
+from numerical_utils import parse_expression
+
 
 # ─────────────────────────────────────────────
 #  1. POLINOMIO DE TAYLOR (simbólico)
@@ -246,17 +248,7 @@ def menu_taylor():
             print("  Ejemplos: sqrt(x)  |  cos(x)  |  exp(x)*cos(x)  |  (x-1)*ln(x)")
             expr_str = input("  f(x) = ").strip()
             try:
-                f_expr = sp.sympify(expr_str, locals={'x': x,
-                                                       'sqrt': sp.sqrt,
-                                                       'sin': sp.sin,
-                                                       'cos': sp.cos,
-                                                       'exp': sp.exp,
-                                                       'ln': sp.log,
-                                                       'log': sp.log,
-                                                       'cosh': sp.cosh,
-                                                       'sinh': sp.sinh,
-                                                       'pi': sp.pi,
-                                                       'E': sp.E})
+                f_expr = parse_expression(expr_str, {'x': x})
             except Exception as e:
                 print(f"  ✗ Error al parsear la función: {e}")
                 continue
@@ -277,11 +269,7 @@ def menu_taylor():
         elif opcion == '2':
             expr_str = input("\n  f(x) = ").strip()
             try:
-                f_expr = sp.sympify(expr_str, locals={'x': x, 'sqrt': sp.sqrt,
-                                                       'sin': sp.sin, 'cos': sp.cos,
-                                                       'exp': sp.exp, 'ln': sp.log,
-                                                       'log': sp.log, 'cosh': sp.cosh,
-                                                       'pi': sp.pi, 'E': sp.E})
+                f_expr = parse_expression(expr_str, {'x': x})
             except Exception as e:
                 print(f"  ✗ {e}"); continue
 
@@ -318,11 +306,7 @@ def menu_taylor():
         elif opcion == '3':
             expr_str = input("\n  f(x) = ").strip()
             try:
-                f_expr = sp.sympify(expr_str, locals={'x': x, 'sqrt': sp.sqrt,
-                                                       'sin': sp.sin, 'cos': sp.cos,
-                                                       'exp': sp.exp, 'ln': sp.log,
-                                                       'log': sp.log, 'pi': sp.pi,
-                                                       'E': sp.E})
+                f_expr = parse_expression(expr_str, {'x': x})
             except Exception as e:
                 print(f"  ✗ {e}"); continue
 
@@ -361,11 +345,7 @@ def menu_taylor():
         elif opcion == '4':
             expr_str = input("\n  f(x) = ").strip()
             try:
-                f_expr = sp.sympify(expr_str, locals={'x': x, 'sqrt': sp.sqrt,
-                                                       'sin': sp.sin, 'cos': sp.cos,
-                                                       'exp': sp.exp, 'ln': sp.log,
-                                                       'log': sp.log, 'pi': sp.pi,
-                                                       'E': sp.E})
+                f_expr = parse_expression(expr_str, {'x': x})
             except Exception as e:
                 print(f"  ✗ {e}"); continue
 
@@ -391,11 +371,7 @@ def menu_taylor():
         elif opcion == '5':
             expr_str = input("\n  f(x) = ").strip()
             try:
-                f_expr = sp.sympify(expr_str, locals={'x': x, 'sqrt': sp.sqrt,
-                                                       'sin': sp.sin, 'cos': sp.cos,
-                                                       'exp': sp.exp, 'ln': sp.log,
-                                                       'log': sp.log, 'cosh': sp.cosh,
-                                                       'pi': sp.pi, 'E': sp.E})
+                f_expr = parse_expression(expr_str, {'x': x})
             except Exception as e:
                 print(f"  ✗ {e}"); continue
 
