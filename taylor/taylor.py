@@ -14,7 +14,7 @@
 ==============================================================
 """
 
-import sympy as sp
+import sympy as sp  # type: ignore
 import numpy as np
 import matplotlib.pyplot as plt
 from math import factorial
@@ -226,18 +226,18 @@ def graficar_taylor(f_expr, x, x0, n, intervalo, titulo=None):
 def menu_taylor():
     x = sp.Symbol('x')
 
-    print("\n" + "="*60)
-    print("   MÓDULO 1 — POLINOMIOS DE TAYLOR")
-    print("="*60)
-    print("  1. Calcular polinomio de Taylor P_n(x)")
-    print("  2. Evaluar P_n(x) — forma directa vs Horner")
-    print("  3. Cota del error de truncamiento")
-    print("  4. Términos necesarios para una tolerancia dada")
-    print("  5. Graficar f(x) vs P_n(x)")
-    print("  0. Volver al menú principal")
-    print("="*60)
-
     while True:
+        print("\n" + "=" * 60)
+        print("   MÓDULO 1 — POLINOMIOS DE TAYLOR")
+        print("=" * 60)
+        print("  1. Calcular polinomio de Taylor P_n(x)")
+        print("  2. Evaluar P_n(x) — forma directa vs Horner")
+        print("  3. Cota del error de truncamiento")
+        print("  4. Términos necesarios para una tolerancia dada")
+        print("  5. Graficar f(x) vs P_n(x)")
+        print("  0. Volver al menú principal")
+        print("=" * 60)
+
         opcion = input("\n  Selecciona una opción: ").strip()
 
         # ── Opción 1: Calcular P_n ──────────────────────────────
